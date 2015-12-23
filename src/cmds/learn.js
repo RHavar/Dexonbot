@@ -1,9 +1,9 @@
 module.exports = {
-	name: "learn",
-	exec: function(data){
-		if(typeof data === "undefined") return;
-		
-		var jsonf = require('json-file');
+    name: "learn",
+    exec: function(data){
+        if(typeof data === "undefined") return;
+        
+        var jsonf = require('json-file');
         
         var username = data.username,
             channelName = data.channelName,
@@ -15,7 +15,7 @@ module.exports = {
             quotes = quotesFile.data.quotes;
             
         quotes.push(message.replace("!learn ", ""));
-		quotesFile.set('quotes', quotes);
-		quotesFile.writeSync();
-	}
+        quotesFile.set('quotes', quotes);
+        quotesFile.writeSync();
+    }
 }
