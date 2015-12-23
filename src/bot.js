@@ -48,6 +48,9 @@ function DexonBot(){
                 case "quote":
                     require("./cmds/quote.js").exec(data);
                     break;
+                case "learn":
+                    require("./cmds/learn.js").exec(data);
+                    break;
             }
         }catch(e){
             console.error("[onCMD Error] ", e.message);
