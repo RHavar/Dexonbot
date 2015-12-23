@@ -1,0 +1,12 @@
+{
+    "name": "DexonBot",
+    "version": "1.0.0",
+    "description": "A Bustabit chat bot.",
+    "author": "Dexon Noxed <dexon@live.ca>",
+    "dependencies": { },
+    "repository": {
+		"type" : "git",
+  		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
+	},
+    "main": "src/bot.js"
+}
