@@ -36,7 +36,7 @@ module.exports = {
                 }
             }
         }
-        console.log(spamStreak);
+        
         if(spamStreak >= 3){
             spamStreak = 0;
             require("../bot.js").dexonbot.webClient.doSay("/mute "+msg.username+" 3m", msg.channelName);
