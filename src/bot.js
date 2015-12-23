@@ -45,6 +45,9 @@ function DexonBot(){
                 case "ping":
                     require("./cmds/ping.js").exec(data);
                     break;
+                case "ping":
+                    require("./cmds/quote.js").exec(data);
+                    break;
             }
         }catch(e){
             console.error("[onCMD Error] ", e.message);
