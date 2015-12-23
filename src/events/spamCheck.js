@@ -30,9 +30,9 @@ module.exports = {
         if(tempUserSpamRecords.length > 0){
             for(var i=0; i<tempUserSpamRecords.length; i++){
                 if(tempUserSpamRecords[i].message == msg.message){
-                    if(i!=tempUserSpamRecords.length-1 && tempUserSpamRecords[i+1].time-tempUserSpamRecords[i].time <= 3000) spamStreak++;
+                    if(tempUserSpamRecords[(tempUserSpamRecords.length-1<=0?0:i)].time-tempUserSpamRecords[i].time <= 3000) spamStreak++;
                 }else{
-                    if(i!=tempUserSpamRecords.length-1 && tempUserSpamRecords[i+1].time-tempUserSpamRecords[i].time <= 1000) spamStreak++;
+                    if(tempUserSpamRecords[(tempUserSpamRecords.length-1<=0?0:i)].time-tempUserSpamRecords[i].time <= 1000) spamStreak++;
                 }
             }
         }
