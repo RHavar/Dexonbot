@@ -19,6 +19,7 @@ module.exports = {
         for(var i=0; i<spamList.length; i++){
             if((new Date()).getTime() - spamList[i].time > 3000){
                 spamList.splice(i, 1);
+                break;
             }
             
             if(spamList[i].username == msg.username){
