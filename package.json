@@ -2,11 +2,20 @@
     "name": "DexonBot",
     "version": "2.0.0",
     "description": "A Bustabit chat bot.",
-    "author": "Dexon Noxed <dexon@live.ca>",
-    "dependencies": {},
+    "author": "Dexon Noxed <dexon@live.ca> (http://dexontech.net/)",
+    "dependencies": {
+        "co": "~4.6.0",
+        "co-request": "~1.0.0",
+        "request": "~2.67.0",
+        "socket.io-client": "~1.3.6",
+        "socket.io-client-cookie": "~0.1.0"
+    },
     "repository": {
 		"type" : "git",
   		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
 	},
+    "scripts": {
+        "start": "node src/bot.js"
+    },
     "main": "src/bot.js"
 }
