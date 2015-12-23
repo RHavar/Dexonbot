@@ -11,3 +11,7 @@
 ## Starting
 
 ```npm start```
+
+## Credits
+
+**Based on [Shiba](https://github.com/moneypot/shiba)**
