@@ -3,10 +3,7 @@
     "version": "2.0.0",
     "description": "A Bustabit chat bot.",
     "author": "Dexon Noxed <dexon@live.ca>",
-    "dependencies": {
-        "express": "~3.2.4",
-        "socket.io": "~0.9.14"
-    },
+    "dependencies": {},
     "repository": {
 		"type" : "git",
   		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
