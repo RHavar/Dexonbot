@@ -45,7 +45,7 @@ function DexonBot(){
                 case "ping":
                     require("./cmds/ping.js").exec(data);
                     break;
-                case "ping":
+                case "quote":
                     require("./cmds/quote.js").exec(data);
                     break;
             }
