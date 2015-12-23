@@ -2,6 +2,10 @@
 -----------------*/
 
 
+/* TEMP. VARS
+-----------------*/
+module.exports.spamList = [];
+
 /* BOT
 -----------------*/
 function DexonBot(){
@@ -37,6 +41,8 @@ function DexonBot(){
                 parameters: parameters
             });
         }
+        
+        require("./events/spamCheck.js").exec(msg);
     });
 
     self.onCmd = function(cmd, data){
