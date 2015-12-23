@@ -5,6 +5,6 @@ module.exports = {
 		var username = data.username,
 			channelName = data.channelName;
 
-		this.webClient.doSay("pong", channelName);
+		require("../bot.js").dexonbot.webClient.doSay("pong", channelName);
 	}
 }

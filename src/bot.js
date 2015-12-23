@@ -32,6 +32,8 @@ function DexonBot(){
             }
             self.onCmd(cmd, {
                 username: username,
+                channelName: channelName,
+                msg: msg,
                 parameters: parameters
             });
         }
@@ -49,7 +51,7 @@ function DexonBot(){
         }
     }
 }
-var dexonbot = new Dexonbot();
+module.exports.dexonbot = new DexonBot();
 
 /* UNCAUGHT EXCEPTIONS
 -----------------*/
