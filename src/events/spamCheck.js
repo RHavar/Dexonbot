@@ -40,6 +40,7 @@ module.exports = {
         if(spamStreak >= 3){
             spamStreak = 0;
             require("../bot.js").dexonbot.webClient.doSay("/mute "+msg.username+" 3m", msg.channelName);
+            require("../bot.js").dexonbot.webClient.doSay("@"+msg.username+" don't spam please.", msg.channelName);
             console.log("Muted "+msg.username+" for Spamming channel '"+msg.channelName+"'");
         }
         
