@@ -33,7 +33,7 @@ module.exports = {
                 if(tempUserSpamRecords[i].message == msg.message){
                     if(tempUserSpamRecords[(tempUserSpamRecords.length-1<=0?0:i)].time-tempUserSpamRecords[i].time <= 3000) spamStreak++;
                 }else{
-                    if(tempUserSpamRecords[(tempUserSpamRecords.length-1<=0?0:i)].time-tempUserSpamRecords[i].time <= 1000) spamStreak++;
+                    if(tempUserSpamRecords[(tempUserSpamRecords.length-1<=0?0:i)].time-tempUserSpamRecords[i].time <= 700) spamStreak++;
                 }
             }
         }

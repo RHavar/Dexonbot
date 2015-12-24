@@ -7,7 +7,7 @@ module.exports = {
             parameters = data.parameters;
         
         if(channelName == "english"){
-            require("../bot.js").dexonbot.webClient.doSay("@"+username+" Please use another channel for that command.", channelName);
+            require("../bot.js").dexonbot.webClient.doSay("@"+username+" Please use another channel for that command. (Click on the flag at the bottom righ of the chat)", channelName);
             return;
         }
         
@@ -30,7 +30,5 @@ module.exports = {
                 require("../bot.js").dexonbot.webClient.doSay("[Lotto] Unknow command. Type '!lotto help' for more details", channelName);
             }
         }
-        
-        
     }
 };
