@@ -5,24 +5,35 @@
 /* TEMP. VARS
 -----------------*/
 module.exports.spamList = [];
+module.exports.lotto;
+
+/* EVENTS
+-----------------*/
+require("./events/lotto.js").exec({initialize: true});
 
 /* BOT
 -----------------*/
 function DexonBot(){
-    var self = this,
-        Config = require('./Config'),
-        GameClient = require('./GameClient'),
+    var self = this
+    self.Config = require('./Config');
+    
+    var GameClient = require('./GameClient'),
         WebClient = require('./WebClient');
-
+    
     // Set bot's session cookie for connections
-    require('socket.io-client-cookie').setCookies('id=' + Config.SESSION);
-
+    require('socket.io-client-cookie').setCookies('id=' + self.Config.SESSION);
+    
     // Connect to the game server.
-    //self.gameClient = new GameClient(Config);
-
+    self.gameClient = new GameClient(self.Config);
+    
+    // Player cashed out
+    self.gameClient.on('cashed_out', function(bet){
+        require("./events/lotto.js").exec(bet);
+    });
+    
     // Connect to the web server.
-    self.webClient = new WebClient(Config);
-
+    self.webClient = new WebClient(self.Config);
+    
     // New message in chat.
     self.webClient.on('msg', function(msg) {
         if(msg.message[0] == "!"){ // User calling a bot command
@@ -44,7 +55,7 @@ function DexonBot(){
         
         require("./events/spamCheck.js").exec(msg);
     });
-
+    
     self.onCmd = function(cmd, data){
         try{
             switch(cmd.toLowerCase()) {
@@ -56,6 +67,12 @@ function DexonBot(){
                     break;
                 case "learn":
                     require("./cmds/learn.js").exec(data);
+                    break;
+                case "claim":
+                    require("./cmds/claim.js").exec(data);
+                    break;
+                case "lotto":
+                    require("./cmds/lotto.js").exec(data);
                     break;
             }
         }catch(e){

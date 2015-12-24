@@ -18,4 +18,4 @@ module.exports = {
         quotesFile.set('quotes', quotes);
         quotesFile.writeSync();
     }
-}
+};

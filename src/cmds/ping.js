@@ -9,4 +9,4 @@ module.exports = {
         
         require("../bot.js").dexonbot.webClient.doSay("pong ("+(now - messageDate)+" ms)", channelName);
     }
-}
+};
