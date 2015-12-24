@@ -74,6 +74,9 @@ function DexonBot(){
                 case "lotto":
                     require("./cmds/lotto.js").exec(data);
                     break;
+                case "8ball":
+                    require("./cmds/8ball.js").exec(data);
+                    break;
             }
         }catch(e){
             console.error("[onCMD Error] ", e.message);
