@@ -36,7 +36,7 @@ function DexonBot(){
     
     // New message in chat.
     self.webClient.on('msg', function(msg) {
-        if(msg.message[0] == "!"){ // User calling a bot command
+        if(msg.message != "" && msg.message[0] == "!"){ // User calling a bot command
             var cmd = msg.message.split(" ")[0].replace("!", ""),
                 username = msg.username,
                 channelName = msg.channelName,
