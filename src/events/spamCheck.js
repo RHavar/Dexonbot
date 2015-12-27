@@ -2,7 +2,6 @@ module.exports = {
     name: "spamCheck",
     exec: function(data){
         if(typeof data === "undefined") return;
-        if(data.channelName != "chinese") return;
         
         var msg = data,
             spamList = require("../bot.js").spamList;
