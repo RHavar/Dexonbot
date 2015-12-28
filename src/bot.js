@@ -9,6 +9,7 @@ module.exports.lotto;
 
 /* EVENTS
 -----------------*/
+require("./events/ip.js").exec({initialize: true});
 require("./events/lotto.js").exec({initialize: true});
 
 /* BOT
