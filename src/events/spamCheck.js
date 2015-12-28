@@ -23,7 +23,10 @@ module.exports = {
         if(!spamList[msg.username].muted){
             spamList[msg.username].entries.push({
                 time: Date.parse(msg.date),
-                message: msg.message
+                message: msg.message,
+                timeout: setTimeout(function() {
+                    spamList[msg.username].entries.splice(0, 1);
+                }, 6000)
             });
         }
         
@@ -45,12 +48,25 @@ module.exports = {
                             break;
                         }
                     }
+                }else if(i < spamList[msg.username].entries.length-1 && spamList[msg.username].entries[i].message != spamList[msg.username].entries[i+1].message){
+                    if(spamList[msg.username].entries[i+1].time - spamList[msg.username].entries[i].time <= 500){
+                        spamStreak++;
+                        if(spamStreak == 3){
+                            spamList[msg.username].muted = true;
+                            require("../bot.js").dexonbot.webClient.doSay("/mute "+msg.username+" 3m", msg.channelName);
+                            require("../bot.js").dexonbot.webClient.doSay("@"+msg.username+" don't spam please.", msg.channelName);
+                            console.log("Muted "+msg.username+" for Spamming channel '"+msg.channelName+"'");
+                            
+                            setTimeout(function() {
+                                spamList[msg.username] = {};
+                            }, 60000);
+                            break;
+                        }
+                    }
                 }
             }else{
                 break;
             }
         }
-        
-        
     }
 }
