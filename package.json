@@ -14,10 +14,6 @@
         "socket.io-client-cookie": "~0.1.0",
         "ws": "~0.8.1"
     },
-    "repository": {
-		"type" : "git",
-		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
-    },
     "engines": {
         "node": ">= 5.2.0",
         "npm": ">= 1.0.0"
