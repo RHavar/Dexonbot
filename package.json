@@ -16,8 +16,12 @@
     },
     "repository": {
 		"type" : "git",
-  		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
+		"url" : "https://github.com/Dexon95/Bustabit_DexonBot.git"
 	},
+    "engines": {
+        "node": ">= 5.2.0",
+        "npm": ">= 1.0.0"
+    },
     "scripts": {
         "start": "node src/bot.js"
     },
