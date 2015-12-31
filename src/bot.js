@@ -17,7 +17,7 @@ require("./events/lotto.js").exec({initialize: true});
 function DexonBot(){
     var self = this
     self.Config = require('./Config');
-    console.log(JSON.stringify(self.Config));
+    //console.log(JSON.stringify(self.Config)); // uncomment to see your configs
     var GameClient = require('./GameClient'),
         WebClient = require('./WebClient');
     
