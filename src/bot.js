@@ -11,6 +11,7 @@ module.exports.lotto;
 -----------------*/
 require("./events/ip.js").exec({initialize: true});
 require("./events/lotto.js").exec({initialize: true});
+require("./events/reminders.js").exec({initialize: true});
 
 /* BOT
 -----------------*/
